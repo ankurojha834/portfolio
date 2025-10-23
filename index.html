@@ -1385,6 +1385,14 @@
                 display: flex;
             }
 
+            nav {
+                padding: 0 1rem;
+            }
+
+            .logo {
+                font-size: 1.4rem;
+            }
+
             nav ul {
                 position: absolute;
                 top: 100%;
@@ -1408,34 +1416,268 @@
                 visibility: visible;
             }
 
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 3rem;
+            section {
+                padding: 3rem 1.5rem;
             }
 
-            .form-row {
-                grid-template-columns: 1fr;
+            .hero {
+                min-height: 100vh;
+                padding: 2rem 1rem;
             }
 
-            .cursor-dot,
-            .cursor-outline {
+            .hero-greeting {
+                font-size: 1rem;
+            }
+
+            .hero h1 {
+                font-size: clamp(2rem, 10vw, 3rem);
+                letter-spacing: -1px;
+            }
+
+            .typing-text {
+                font-size: clamp(1rem, 4vw, 1.5rem);
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .scroll-indicator {
                 display: none;
             }
 
             h2 {
-                font-size: 2rem;
+                font-size: clamp(1.8rem, 6vw, 2.5rem);
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+                padding: 0 1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .profile-img {
+                width: 200px;
+                height: 200px;
+                font-size: 4rem;
+            }
+
+            .profile-ring {
+                top: -10px;
+                left: -10px;
+                right: -10px;
+                bottom: -10px;
+            }
+
+            .about-text p {
+                font-size: 1rem;
+            }
+
+            .about-highlights {
+                grid-template-columns: 1fr;
             }
 
             .stats {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .stat-item {
+                padding: 1.5rem 1rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .skills-tabs {
+                gap: 0.5rem;
+                padding: 0 0.5rem;
+            }
+
+            .skill-tab {
+                padding: 0.6rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .skill-card {
+                padding: 1.5rem 1rem;
+            }
+
+            .skill-icon {
+                font-size: 2.5rem;
+            }
+
+            .skill-card h3 {
+                font-size: 1rem;
+            }
+
+            .skill-card p {
+                font-size: 0.8rem;
+            }
+
+            .filter-buttons {
+                gap: 0.5rem;
+                padding: 0 0.5rem;
+            }
+
+            .filter-btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.85rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .project-img {
+                height: 180px;
+                font-size: 3rem;
+            }
+
+            .project-content {
+                padding: 1.5rem;
+            }
+
+            .project-content h3 {
+                font-size: 1.2rem;
+            }
+
+            .project-content p {
+                font-size: 0.95rem;
             }
 
             .experience-timeline {
                 padding-left: 2rem;
             }
 
+            .experience-item {
+                padding: 1.5rem;
+                margin-bottom: 2rem;
+            }
+
             .experience-item::before {
                 left: -2.5rem;
+                width: 18px;
+                height: 18px;
+            }
+
+            .experience-header {
+                flex-direction: column;
+                align-items: start;
+            }
+
+            .experience-item h3 {
+                font-size: 1.2rem;
+            }
+
+            .experience-item .company {
+                font-size: 1rem;
+            }
+
+            .contact-container {
+                padding: 2rem 1.5rem;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .contact-info-item {
+                padding: 1rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group input,
+            .form-group textarea {
+                font-size: 0.95rem;
+            }
+
+            .social-links {
+                gap: 1rem;
+            }
+
+            .social-link {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .scroll-top {
+                width: 50px;
+                height: 50px;
+                bottom: 1.5rem;
+                right: 1.5rem;
+                font-size: 1.2rem;
+            }
+
+            .cursor-dot,
+            .cursor-outline {
+                display: none !important;
+                opacity: 0 !important;
+                visibility: hidden !important;
+                pointer-events: none !important;
+            }
+        }
+
+        /* Additional mobile detection for cursor */
+        @media (hover: none) and (pointer: coarse) {
+            .cursor-dot,
+            .cursor-outline {
+                display: none !important;
+            }
+        }
+
+        /* Extra small devices */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .typing-text {
+                font-size: 1.1rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .btn {
+                padding: 0.9rem 2rem;
+                font-size: 0.95rem;
             }
         }
     </style>
@@ -2031,7 +2273,7 @@ It speaks in your language , understands your struggles , and offers judgment-fr
 
     <div class="scroll-top" onclick="scrollToTop()">↑</div>
 
-    <script>
+     <script>
         // Loading screen
         window.addEventListener('load', () => {
             setTimeout(() => {
@@ -2043,17 +2285,24 @@ It speaks in your language , understands your struggles , and offers judgment-fr
         const cursorDot = document.querySelector('.cursor-dot');
         const cursorOutline = document.querySelector('.cursor-outline');
 
-        document.addEventListener('mousemove', (e) => {
-            cursorDot.style.left = e.clientX + 'px';
-            cursorDot.style.top = e.clientY + 'px';
-            cursorOutline.style.left = e.clientX + 'px';
-            cursorOutline.style.top = e.clientY + 'px';
-        });
+        // Only enable custom cursor on devices with mouse/pointer
+        if (window.matchMedia("(pointer: fine)").matches) {
+            document.addEventListener('mousemove', (e) => {
+                cursorDot.style.left = e.clientX + 'px';
+                cursorDot.style.top = e.clientY + 'px';
+                cursorOutline.style.left = e.clientX + 'px';
+                cursorOutline.style.top = e.clientY + 'px';
+            });
 
-        document.querySelectorAll('a, button, .project-card, .skill-card').forEach(el => {
-            el.addEventListener('mouseenter', () => cursorOutline.classList.add('expand'));
-            el.addEventListener('mouseleave', () => cursorOutline.classList.remove('expand'));
-        });
+            document.querySelectorAll('a, button, .project-card, .skill-card').forEach(el => {
+                el.addEventListener('mouseenter', () => cursorOutline.classList.add('expand'));
+                el.addEventListener('mouseleave', () => cursorOutline.classList.remove('expand'));
+            });
+        } else {
+            // Hide cursor elements on touch devices
+            cursorDot.style.display = 'none';
+            cursorOutline.style.display = 'none';
+        }
 
         // Scroll progress
         window.addEventListener('scroll', () => {
@@ -2095,7 +2344,7 @@ It speaks in your language , understands your struggles , and offers judgment-fr
         // Typing animation
         const phrases = [
             'Full Stack Developer',
-            'GenAi Enthusiast',
+            'UI/UX Enthusiast',
             'Problem Solver',
             'Creative Thinker',
             'Tech Innovator'
@@ -2355,5 +2604,3 @@ It speaks in your language , understands your struggles , and offers judgment-fr
             document.querySelectorAll('img[data-src]').forEach(img => imageObserver.observe(img));
         }
     </script>
-</body>
-</html>
